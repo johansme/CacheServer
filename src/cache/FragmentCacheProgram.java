@@ -258,7 +258,6 @@ public class FragmentCacheProgram extends Application {
 								fragments.remove(j);
 							}
 						}
-						cacheProgram.putFileFragments(fileRequest, fragments);
 						for (int j = 0; j < fromFragment; j++) {
 							cachedLength += fragments.get(j).length;
 						}
@@ -272,6 +271,7 @@ public class FragmentCacheProgram extends Application {
 						for (byte[] bs : fragments) {
 							os.write(bs);
 						}
+						cacheProgram.putFileFragments(fileRequest, fragments);
 						os.close();
 					}
 					cacheProgram.writeToLog("Response: " + (cachedLength*100)/totalLength + "% of file " + fileRequest + " was constucted with the cashed data");
@@ -313,19 +313,19 @@ public class FragmentCacheProgram extends Application {
 					}
 					dip.close();
 
-					cacheProgram.putFileFragments(fileRequest, fragments);
 					Headers h = exchange.getResponseHeaders();
 					h.add("Content-Type", contentType);
 					int len = 0;
-					for (byte[] a : cacheProgram.getCachedFiles().get(fileRequest)) {
+					for (byte[] a : fragments) {
 						len += a.length;
 					}
 
 					exchange.sendResponseHeaders(200, len);
 					OutputStream os = exchange.getResponseBody();
-					for (byte[] a : cacheProgram.getCachedFiles().get(fileRequest)) {
+					for (byte[] a : fragments) {
 						os.write(a);
 					}
+					cacheProgram.putFileFragments(fileRequest, fragments);
 					os.close();
 					cacheProgram.writeToLog("Response: full file " + fileRequest + " downloaded from server");
 				} else {
