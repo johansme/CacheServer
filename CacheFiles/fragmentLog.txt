@@ -9,3 +9,7 @@ Response: full file Test.txt downloaded from server
 User request: file Test.txt at 2016-08-27T14:01:04.119
 Response: 100% of file Test.txt was constucted with the cashed data
 Cache cleared at 2016-08-27T14:01:19.677
+User request: file list at 2016-08-27T14:40:20.652
+Response: file list downloaded from server
+User request: file Test.txt at 2016-08-27T14:40:23.690
+Response: full file Test.txt downloaded from server

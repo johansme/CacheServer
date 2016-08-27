@@ -77,7 +77,7 @@ public class FragmentCacheViewController {
 			}
 			Label bytesLabel = new Label();
 			bytesLabel.wrapTextProperty().set(true);
-			bytesLabel.setText("\tLength: " + len + " bytes");
+			bytesLabel.setText("\tLength: " + len + " bytes; Number of fragments: " + fragments.size());
 			line.getChildren().add(fileLabel);
 			line.getChildren().add(bytesLabel);
 			fileListView.getItems().add(line);
