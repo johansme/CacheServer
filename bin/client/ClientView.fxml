@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+
+<Pane xmlns:fx="http://javafx.com/fxml/1" prefHeight="500" prefWidth="500" fx:controller="client.ClientViewController">
+	<children>
+		<Label text="Files on server:" layoutX="5" layoutY="10" />
+		<ListView fx:id="fileListView" prefHeight="435" prefWidth="490"
+			layoutX="5" layoutY="30" />
+		<Button fx:id="chooseButton" alignment="center" onAction="#chooseButtonPressed"
+			prefWidth="80" text="Open file" layoutX="330" layoutY="475" />
+		<Button fx:id="refreshButton" alignment="CENTER" onAction="#refreshButtonPressed"
+			prefWidth="80" text="Refresh" layoutX="415" layoutY="475" />
+	</children>
+</Pane>
+

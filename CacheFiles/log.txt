@@ -1,0 +1,10 @@
+User request: file list at 2016-08-24T12:26:51.772
+Response: file list downloaded from server
+User request: file DSC_0307.JPG at 2016-08-24T12:26:57.757
+Response: file DSC_0307.JPG downloaded from server
+Cache cleared at 2016-08-24T12:30:13.498
+User request: file list at 2016-08-25T10:41:16.379
+Response: file list downloaded from server
+User request: file DSC_0307.JPG at 2016-08-25T10:41:22.281
+Response: file DSC_0307.JPG downloaded from server
+Cache cleared at 2016-08-25T10:42:05.228
