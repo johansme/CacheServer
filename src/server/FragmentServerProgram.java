@@ -69,7 +69,7 @@ private Map<String, String> files;
 	public static void main(String[] args) {
 		try {
 			FragmentServerProgram program = new FragmentServerProgram();
-			HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+			HttpServer server = HttpServer.create(new InetSocketAddress(8088), 0);
 			server.createContext("/info", new InfoHandler(program));
 			server.createContext("/full/", new FullGetHandler(program));
 			server.createContext("/", new GetHandler(program));

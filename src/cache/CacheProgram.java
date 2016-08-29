@@ -126,7 +126,7 @@ public class CacheProgram extends Application {
 		@Override
 		public void handle(HttpExchange exchange) throws IOException {
 			cache.writeToLog("User request: file list at " + LocalDateTime.now().toString());
-			String url = "http://localhost:8080/info";
+			String url = "http://localhost:8088/info";
 			URL obj = new URL(url);
 			HttpURLConnection con = (HttpURLConnection)obj.openConnection();
 			int responseCode = con.getResponseCode();
@@ -187,7 +187,7 @@ public class CacheProgram extends Application {
 				bis.close();
 				cacheProgram.writeToLog("Response: cached file " + fileRequest);
 			} else {
-				String url = "http://localhost:8080/" + fileRequest;
+				String url = "http://localhost:8088/" + fileRequest;
 				URL obj = new URL(url);
 				HttpURLConnection con = (HttpURLConnection)obj.openConnection();
 				int responseCode = con.getResponseCode();

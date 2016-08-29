@@ -1,0 +1,7 @@
+User request: file list at 2016-08-29T15:15:41.673
+Response: file list downloaded from server
+User request: file Test.txt at 2016-08-29T15:15:46.229
+Response: file Test.txt downloaded from server
+User request: file Test.txt at 2016-08-29T15:15:49.582
+Response: cached file Test.txt
+Cache cleared at 2016-08-29T15:18:46.701

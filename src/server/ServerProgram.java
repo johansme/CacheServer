@@ -41,7 +41,7 @@ public class ServerProgram {
 	public static void main(String[] args) {
 		try {
 			ServerProgram program = new ServerProgram();
-			HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+			HttpServer server = HttpServer.create(new InetSocketAddress(8088), 0);
 			server.createContext("/info", new InfoHandler(program));
 			server.createContext("/", new GetHandler(program));
 			server.start();

@@ -135,7 +135,7 @@ public class FragmentCacheProgram extends Application {
 		@Override
 		public void handle(HttpExchange exchange) throws IOException {
 			cache.writeToLog("User request: file list at " + LocalDateTime.now().toString());
-			String url = "http://localhost:8080/info";
+			String url = "http://localhost:8088/info";
 			URL obj = new URL(url);
 			HttpURLConnection con = (HttpURLConnection)obj.openConnection();
 			int responseCode = con.getResponseCode();
@@ -187,7 +187,7 @@ public class FragmentCacheProgram extends Application {
 				List<String> hashes = cacheProgram.getFragmentHashes(fileRequest);
 				String hashString = hashes.toString().replaceAll(" ", "");
 				byte[] hashArray = hashString.getBytes();
-				URL url = new URL("http://localhost:8080/" + fileRequest);
+				URL url = new URL("http://localhost:8088/" + fileRequest);
 				HttpURLConnection con = (HttpURLConnection)url.openConnection();
 				con.setDoOutput(true);
 				con.setRequestMethod("POST");
@@ -283,7 +283,7 @@ public class FragmentCacheProgram extends Application {
 					os.close();
 				}
 			} else {
-				String url = "http://localhost:8080/full/" + fileRequest;
+				String url = "http://localhost:8088/full/" + fileRequest;
 				URL obj = new URL(url);
 				HttpURLConnection con = (HttpURLConnection)obj.openConnection();
 				int responseCode = con.getResponseCode();
